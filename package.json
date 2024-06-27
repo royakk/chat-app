@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --experimental-https",
     "build": "next build",
     "start": "set HTTPS=true&&react-scripts next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^10.12.2",
+    "https": "^1.0.0",
     "next": "14.0.2",
     "next-auth": "^4.24.5",
     "react": "^18",

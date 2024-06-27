@@ -1,14 +1,23 @@
-import { SessionProvider } from 'next-auth/react'
-import type { AppProps } from 'next/app'
+
 import '../styles/globals.css'
 
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps }
-}: AppProps) {
-  return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-    </SessionProvider>
+import { useEffect, useState } from 'react'
+import {Auth} from './Auth'
+// import Chat from './Chat'
+export default function App() {
+  const [isLoading, setIsLoading] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  useEffect(() => {
+    setIsLoading(false)
+  }, [])
+  return isLoading ? (
+    <div
+      className="d-flex text-white vh-100 vw-100 
+    justify-content-center align-items-center"
+    >
+      Loading...
+    </div>
+  ) : (
+    <div>{isAuthenticated ? <Chat /> : <Auth />}</div>
   )
 }
