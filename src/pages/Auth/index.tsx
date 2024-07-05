@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Login } from "../Login"
+import { Signup } from "../Signup"
 
 
 export  const Auth =()=>{

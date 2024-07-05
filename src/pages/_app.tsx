@@ -12,12 +12,11 @@ export default function App() {
   }, [])
   return isLoading ? (
     <div
-      className="d-flex text-white vh-100 vw-100 
-    justify-content-center align-items-center"
+     
     >
       Loading...
     </div>
   ) : (
-    <div>{isAuthenticated ? <Chat /> : <Auth />}</div>
+    <div>{isAuthenticated ? "jhgg" : <Auth />}</div>
   )
 }
